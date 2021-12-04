@@ -1,10 +1,12 @@
 # CustomJoinmessage
     
-Plugin permettant de choisir les messages de bienvenue, que ce soit pour un staff, un nouveau joueur ou un joueur qui s'est déjà connecté au serveur
+[FR] Plugin permettant de choisir les messages de bienvenue, que ce soit pour un staff, un nouveau joueur ou un joueur qui s'est déjà connecté au serveur
+
+[EN] Plugin to choose the welcome messages, whether for a staff, a new player or a player who has already connected to the server
 
 ------
 
-## Message par défaut
+## Default configuration
 
     JoinMessage: §2[+] §f{player}
 
