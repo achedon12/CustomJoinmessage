@@ -1,8 +1,8 @@
 <?php
 
-namespace ash\Events;
+namespace achedon12\customjoin\Events;
 
-use ash\main;
+use achedon12\customjoin\main;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerQuitEvent;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace ash;
+namespace achedon12\customjoin;
 
-use ash\Events\joinEvent;
-use ash\Events\quitEvent;
+use achedon12\customjoin\Events\joinEvent;
+use achedon12\customjoin\Events\quitEvent;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
@@ -15,8 +15,7 @@ class main extends PluginBase implements Listener{
 
     private static $instance;
 
-    public function onEnable()
-    {
+    protected function onEnable():void{
         $this->getLogger()->info("plugin activé");
 
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -29,22 +28,15 @@ class main extends PluginBase implements Listener{
         $this->db = new Config($this->getDataFolder() . "message.yml" . Config::YAML);
 
         if(!file_exists($this->getDataFolder() . "message.yml")){
-            $this->getLogger()->info("Fichier message.yml créé");
+            $this->getLogger()->info("File message.yml create");
             $this->saveDefaultConfig();
 
         }
 
-        $db = main::message();
-        $db->set("JoinMessage","§2[+] §f{player}");
-        $db->set("NewPlayerJoinMessage","§2[+] §fBienvenue à {player} sur le serveur");
-        $db->set("StaffJoinMessage","§2[+] §7[§3Staff§7] §f{player}");
-        $db->set("QuitMessage","§4[-] §f{player}");
-        $db->set("StaffQuitMessage","§4[-] §7[§3Staff§7] §f{player}");
-        $db->save();
+
 
     }
-    public function onDisable()
-    {
+    protected function onDisable():void{
         $this->getLogger()->info("plugin désactivé");
         $this->db->save();
     }
